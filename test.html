@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Advertisement Page</title>
+</head>
+<body>
+
+<div id="adContainer"></div>
+
+<script>
+  // Function to detect if the user is accessing the page from a mobile device
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  // Function to insert PC advertisement code
+  function insertPCAd() {
+    document.getElementById('adContainer').innerHTML = '<!-- PC Advertisement Code --> <div> <center>
+        <script type="text/javascript">
+            var atOptions = {
+                'key' : 'a9e232efa000dee77c4c640fca66d87c',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/a9e232efa000dee77c4c640fca66d87c/invoke.js"></script>
+    </center>
+</div>';
+  }
+
+  // Function to insert mobile advertisement code
+  function insertMobileAd() {
+    document.getElementById('adContainer').innerHTML = '<!-- Mobile Advertisement Code --> <div> <center>
+        <script type="text/javascript">
+            var atOptions = {
+                'key' : 'a9e232efa000dee77c4c640fca66d87c',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/a9e232efa000dee77c4c640fca66d87c/invoke.js"></script>
+    </center>
+    </div>';
+  }
+
+  // Detect device type and insert corresponding advertisement code
+  if (isMobileDevice()) {
+    insertMobileAd();
+  } else {
+    insertPCAd();
+  }
+</script>
+
+</body>
+</html>
